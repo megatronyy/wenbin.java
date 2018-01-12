@@ -1,11 +1,19 @@
 package org.wenbin.console.asyn;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class AsynClass {
+    //ReentrantLock:重入锁需要自己在finally里释放
+    //synchronized内置锁会在块执行完成后由jvm释放
+    private static Lock lock = new ReentrantLock();
+    private static ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+    private static Lock readLock = readWriteLock.readLock();
+    private static Lock writeLock = readWriteLock.writeLock();
+
     public void run(ThreadType threadType) {
         switch (threadType) {
             case Cache:
@@ -23,6 +31,9 @@ public class AsynClass {
             case Single:
                 threadPoolSingle();
                 break;
+            case Task:
+                threadFutureTask();
+                break;
         }
     }
     /**
@@ -30,6 +41,7 @@ public class AsynClass {
      * 线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。
      * */
     private void threadPoolCache() {
+
         ExecutorService cacheThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             final int index = 1;
@@ -49,6 +61,7 @@ public class AsynClass {
      * 定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()
      * */
     private void threadPoolFixed(){
+
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
         for(int i = 0; i<10;i++){
             final int index = 1;
@@ -109,5 +122,52 @@ public class AsynClass {
             }
         }
 
+    }
+
+    private void threadFutureTask(){
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        FutureTask<String> task = getThreadFutureTask();
+        executor.execute(task);
+
+        long begin = new Date().getTime();
+        System.out.println("begin" + begin);
+        try {
+            // System.out.println(task.get());
+            task.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        System.out.println("end  " + (new Date().getTime() - begin));
+        begin = new Date().getTime();
+        System.out.println("begin" + begin);
+        try {
+            task.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        System.out.println("end  " + (new Date().getTime() - begin));
+        executor.shutdown();
+    }
+    private FutureTask<String> getThreadFutureTask(){
+        FutureTask<String> task = new FutureTask<String>(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                long b = new Date().getTime();
+                System.out.println("call begin " + b);
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < 10000; i++) {
+                    sb.append(i).append(",");
+                }
+                System.out.println("call end " + (new Date().getTime() - b));
+                return sb.toString();
+            }
+        });
+        return task;
     }
 }

@@ -8,5 +8,6 @@ public enum ThreadType {
     Fixed,
     scheduled,
     scheduledRate,
-    Single
+    Single,
+    Task
 }

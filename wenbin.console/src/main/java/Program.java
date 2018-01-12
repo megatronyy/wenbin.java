@@ -14,7 +14,7 @@ public class Program {
 
         logger.info("log test!");
 
-        new AsynClass().run(ThreadType.scheduledRate);
+        new AsynClass().run(ThreadType.Task);
         //System.out.println(SubClass.value);
     }
 }
