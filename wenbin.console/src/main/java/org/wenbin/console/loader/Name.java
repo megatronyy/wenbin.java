@@ -7,7 +7,13 @@ public class Name {
         this.instanceName = name;
     }
 
-    public void DisplayToConsole(){
+    public void displayToConsole(){
         System.out.println(this.instanceName);
+    }
+
+    public String getData(String strName){
+        this.instanceName = strName;
+
+        return this.instanceName;
     }
 }
