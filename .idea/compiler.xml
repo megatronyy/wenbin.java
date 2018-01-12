@@ -10,8 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="wenbin.console" target="1.5" />
-      <module name="wenbin.web" target="1.5" />
+      <module name="wenbin.console" target="1.8" />
+      <module name="wenbin.web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
