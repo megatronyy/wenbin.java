@@ -1,5 +1,6 @@
 import org.wenbin.console.asyn.AsynClass;
 import org.wenbin.console.asyn.ThreadType;
+import org.wenbin.console.loader.StartLoader;
 
 import java.util.logging.Logger;
 
@@ -14,7 +15,8 @@ public class Program {
 
         logger.info("log test!");
 
-        new AsynClass().run(ThreadType.Task);
+        //new AsynClass().run(ThreadType.Task);
+        new StartLoader().init();
         //System.out.println(SubClass.value);
     }
 }
