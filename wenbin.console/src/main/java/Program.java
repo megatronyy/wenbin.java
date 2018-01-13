@@ -1,3 +1,4 @@
+import org.wenbin.console.Merkle.HouseCoin;
 import org.wenbin.console.asyn.AsynClass;
 import org.wenbin.console.asyn.ThreadType;
 import org.wenbin.console.loader.StartLoader;
@@ -16,7 +17,8 @@ public class Program {
         logger.info("log test!");
 
         //new AsynClass().run(ThreadType.Task);
-        new StartLoader().init();
+        //new StartLoader().init();
         //System.out.println(SubClass.value);
+        new HouseCoin().run();
     }
 }
