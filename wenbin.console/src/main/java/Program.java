@@ -1,13 +1,16 @@
+import org.springframework.context.annotation.ImportResource;
 import org.wenbin.console.Merkle.HouseCoin;
-import org.wenbin.console.asyn.AsynClass;
-import org.wenbin.console.asyn.ThreadType;
-import org.wenbin.console.loader.StartLoader;
 
+import javax.annotation.Resource;
 import java.util.logging.Logger;
 
 /**
- * Created by quwb on 2018/1/4.
+ *
+ * @author quwb
+ * @date 2018/1/4
  */
+
+@ImportResource(locations = {"classpath:aop.xml"})
 public class Program {
 
     private static Logger logger = Logger.getLogger(Object.class.getName());
@@ -17,8 +20,8 @@ public class Program {
         logger.info("log test!");
 
         //new AsynClass().run(ThreadType.Task);
-        //new StartLoader().init();
-        //System.out.println(SubClass.value);
+        //new StartLoader().init()
+        // System.out.println(SubClass.value);
         new HouseCoin().run();
     }
 }

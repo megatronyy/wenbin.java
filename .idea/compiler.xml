@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="wenbin.console" />
         <module name="wenbin.web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="wenbin.console" target="1.8" />
-      <module name="wenbin.web" target="1.8" />
+      <module name="wenbin.web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
