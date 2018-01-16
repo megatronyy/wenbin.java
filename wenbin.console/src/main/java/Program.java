@@ -10,7 +10,6 @@ import java.util.logging.Logger;
  * @date 2018/1/4
  */
 
-@ImportResource(locations = {"classpath:aop.xml"})
 public class Program {
 
     private static Logger logger = Logger.getLogger(Object.class.getName());
