@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/wenbin.aop/AspectJWeave/AspectJWeave.iml" filepath="$PROJECT_DIR$/wenbin.aop/AspectJWeave/AspectJWeave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wenbin.aop/CglibProxy/CglibProxy.iml" filepath="$PROJECT_DIR$/wenbin.aop/CglibProxy/CglibProxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wenbin.aop/DynamicProxy/DynamicProxy.iml" filepath="$PROJECT_DIR$/wenbin.aop/DynamicProxy/DynamicProxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wenbin.aop/ProxyPattern/ProxyPattern.iml" filepath="$PROJECT_DIR$/wenbin.aop/ProxyPattern/ProxyPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wenbin.aop/SpringBootAop/spring_boot_aop.iml" filepath="$PROJECT_DIR$/wenbin.aop/SpringBootAop/spring_boot_aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/wenbin.console/wenbin.console.iml" filepath="$PROJECT_DIR$/wenbin.console/wenbin.console.iml" />
       <module fileurl="file://$PROJECT_DIR$/wenbin.web/wenbin.web.iml" filepath="$PROJECT_DIR$/wenbin.web/wenbin.web.iml" />
     </modules>

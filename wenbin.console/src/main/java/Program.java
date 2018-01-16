@@ -1,7 +1,4 @@
-import org.springframework.context.annotation.ImportResource;
 import org.wenbin.console.Merkle.HouseCoin;
-
-import javax.annotation.Resource;
 import java.util.logging.Logger;
 
 /**

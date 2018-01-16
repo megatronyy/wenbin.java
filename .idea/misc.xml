@@ -5,6 +5,11 @@
       <list>
         <option value="$PROJECT_DIR$/wenbin.web/pom.xml" />
         <option value="$PROJECT_DIR$/wenbin.console/pom.xml" />
+        <option value="$PROJECT_DIR$/wenbin.aop/AspectJWeave/pom.xml" />
+        <option value="$PROJECT_DIR$/wenbin.aop/CglibProxy/pom.xml" />
+        <option value="$PROJECT_DIR$/wenbin.aop/DynamicProxy/pom.xml" />
+        <option value="$PROJECT_DIR$/wenbin.aop/ProxyPattern/pom.xml" />
+        <option value="$PROJECT_DIR$/wenbin.aop/SpringBootAop/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
